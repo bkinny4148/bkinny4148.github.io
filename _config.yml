@@ -30,7 +30,7 @@ twitter_username: bennymckinny
 github_username:  bkinny4148
 
 # Build settings
-theme: chirpy
+theme: minima
 plugins:
   - jekyll-feed
 
