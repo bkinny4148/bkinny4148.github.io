@@ -1,0 +1,14 @@
+html {
+    background-color: black;
+    font-family: sans-serif;
+    color: white;
+}
+
+#site_name a {
+    color: white;
+    text-decoration: none;
+}
+
+.social_icon {
+    width: 50px;
+}
