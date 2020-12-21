@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"main.scss",
+		"_sass/main.scss"
+	],
+	"sourcesContent": [
+		"@import \"main\";\n",
+		"$bodyFont: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";\n\n\n//so many lost songs pallette\n$a1: #051e3e;\n$a2: #251e3e;\n$a3: #451e3e;\n$a4: #651e3e;\n$a5: #851e3e;\n\n//satori colors pallette\n$b1: #bd8c7d;\n$b2: #d1bfa7;\n$b3: #8e8e90;\n$b4: #49494b;\n\n//snug color pallette\n$c1: #3a4660;\n$c2: #c9af98;\n$c3: #ed8a63;\n$c4: #845007;\n\n//eclipse color pallette\n$d1: #22272c;\n$d2: #2a4158;\n$d3: #597387;\n$d4: #8c9ea3;\n$d5: #958a56;\n\n$bodyColor: #ffffff;\n\n/**\n\nStyle Guide:\n\nelement {\n    details about color, shape, look\n\n    details about spacing, margin, padding\n\n    details about positioning, display, etc.\n}\n\n**/\n\n/* --------------------------------------------- */\n\nhtml {\n    color: $bodyColor;\n    background-color: $d2;\n    font-family: sans-serif;\n}\n\nbody {\n    background-color: $d3;\n    font-family: $bodyFont;\n    \n    margin: 0;\n}\n\nheader {\n    background: $d1;\n}\n\nmain {}\n\nfooter {}\n\n\n/* header content */\n#site_name a {\n    text-decoration: none;\n    color: $bodyColor;\n}\n\n#nav li {\n    list-style: none;    \n    display: inline;\n    \n}\n\n/* profile area */\n#profile_banner {\n    background-color: $d2;\n\n    margin: 0;\n    padding: 0;\n    \n    display: flex;\n    align-items: center;\n}\n\n#profile_pic {\n    border-radius: 50%;\n    width: 15%;\n}\n\n#profile_descr {    \n    margin-left: 5%;\n}"
+	],
+	"names": [],
+	"mappings": "AC+BA;;;;;;;;;;;;GAYG;AAEH,mDAAmD;AAEnD,AAAA,IAAI,CAAC,EACD,KAAK,EAnBG,OAAO,EAoBf,gBAAgB,EAzBf,OAAO,EA0BR,WAAW,EAAE,UAAU,GAC1B;;AAED,AAAA,IAAI,CAAC,EACD,gBAAgB,EA7Bf,OAAO,EA8BR,WAAW,EAvDJ,aAAa,EAAC,kBAAkB,EAAC,UAAU,EAAC,SAAS,EAAC,KAAK,EAAC,UAAU,EAAC,mBAAmB,EAAC,gBAAgB,EAAC,iBAAiB,EAyDpI,MAAM,EAAE,CAAC,GACZ;;AAED,AAAA,MAAM,CAAC,EACH,UAAU,EAtCT,OAAO,GAuCX;;AAOD,oBAAoB;AACpB,AAAA,UAAU,CAAC,CAAC,CAAC,EACT,eAAe,EAAE,IAAI,EACrB,KAAK,EA3CG,OAAO,GA4ClB;;AAED,AAAA,IAAI,CAAC,EAAE,CAAC,EACJ,UAAU,EAAE,IAAI,EAChB,OAAO,EAAE,MAAM,GAElB;;AAED,kBAAkB;AAClB,AAAA,eAAe,CAAC,EACZ,gBAAgB,EA3Df,OAAO,EA6DR,MAAM,EAAE,CAAC,EACT,OAAO,EAAE,CAAC,EAEV,OAAO,EAAE,IAAI,EACb,WAAW,EAAE,MAAM,GACtB;;AAED,AAAA,YAAY,CAAC,EACT,aAAa,EAAE,GAAG,EAClB,KAAK,EAAE,GAAG,GACb;;AAED,AAAA,cAAc,CAAC,EACX,WAAW,EAAE,EAAE,GAClB"
+}

@@ -1,9 +1,100 @@
-$backgroundColor: #ffffff;
-$bodyColor: #000000;
 $bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 
+
+//so many lost songs pallette
+$a1: #051e3e;
+$a2: #251e3e;
+$a3: #451e3e;
+$a4: #651e3e;
+$a5: #851e3e;
+
+//satori colors pallette
+$b1: #bd8c7d;
+$b2: #d1bfa7;
+$b3: #8e8e90;
+$b4: #49494b;
+
+//snug color pallette
+$c1: #3a4660;
+$c2: #c9af98;
+$c3: #ed8a63;
+$c4: #845007;
+
+//eclipse color pallette
+$d1: #22272c;
+$d2: #2a4158;
+$d3: #597387;
+$d4: #8c9ea3;
+$d5: #958a56;
+
+$bodyColor: #ffffff;
+
+/**
+
+Style Guide:
+
+element {
+    details about color, shape, look
+
+    details about spacing, margin, padding
+
+    details about positioning, display, etc.
+}
+
+**/
+
+/* --------------------------------------------- */
+
+html {
+    color: $bodyColor;
+    background-color: $d2;
+    font-family: sans-serif;
+}
+
 body {
-  background: $backgroundColor;
-  color: $bodyColor;
-  font-family: $bodyFont;
+    background-color: $d3;
+    font-family: $bodyFont;
+    
+    margin: 0;
+}
+
+header {
+    background: $d1;
+}
+
+main {}
+
+footer {}
+
+
+/* header content */
+#site_name a {
+    text-decoration: none;
+    color: $bodyColor;
+}
+
+#nav li {
+    list-style: none;    
+    display: inline;
+    
+}
+
+/* profile area */
+#profile_banner {
+    background-color: $d2;
+
+    margin: 0;
+    padding: 0;
+    
+    display: flex;
+    align-items: center;
+}
+
+#profile_pic {
+    border-radius: 50%;
+    width: 15%;
+}
+
+#profile_descr {    
+    margin-left: 5%;
 }

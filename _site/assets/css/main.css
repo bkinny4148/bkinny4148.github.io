@@ -1,0 +1,33 @@
+/**
+
+Style Guide:
+
+element {
+    details about color, shape, look
+
+    details about spacing, margin, padding
+
+    details about positioning, display, etc.
+}
+
+**/
+/* --------------------------------------------- */
+html { color: #ffffff; background-color: #2a4158; font-family: sans-serif; }
+
+body { background-color: #597387; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; margin: 0; }
+
+header { background: #22272c; }
+
+/* header content */
+#site_name a { text-decoration: none; color: #ffffff; }
+
+#nav li { list-style: none; display: inline; }
+
+/* profile area */
+#profile_banner { background-color: #2a4158; margin: 0; padding: 0; display: flex; align-items: center; }
+
+#profile_pic { border-radius: 50%; width: 15%; }
+
+#profile_descr { margin-left: 5%; }
+
+/*# sourceMappingURL=main.css.map */
