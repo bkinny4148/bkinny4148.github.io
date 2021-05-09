@@ -48,6 +48,10 @@ header {
 
 #nav li {
   list-style: none;
+
+  :hover {
+    opacity: 50%;
+  }
 }
 
 #nav a {
@@ -115,6 +119,10 @@ header {
 
 #social-bar {
     justify-content: space-between;
+
+    .icon:hover {
+      opacity: 50%;
+    }
 }
 
 #dive-in {
@@ -152,7 +160,6 @@ $opacity-minimum: .8; //lowest percentage possible to be transparent
 
 #geometric-background {
   position: relative;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -216,8 +223,8 @@ $wave-count: 4;
 
 @for $i from 1 through $wave-count {
   .wave:nth-child(#{$i}) {
-    //animation-delay: #{random(100)}ms;
-    //animation: wave linear #{random(5) + 2}s infinite;
+    animation-delay: #{random(100)}ms;
+    animation: wave linear #{random(5) + 2}s infinite;
   } //.wave:nth-child
 } //for
 
