@@ -83,12 +83,21 @@ header {
 /********************************/
 /* landing section */
 #landing {
-  height: 100vh;
+  height: 100vh; //any scrolling brings to next section
+  min-height: 50rem; //to prevent title card from flowing onto next page
   background: $blue-electric;
-  overflow: hidden;
+  overflow: hidden; //hide shapes that make it out of bounds
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
 }
 
-#landing .content {}
+#landing .content {
+  position: absolute;
+  align-self: center;
+  margin-top: 15vh;
+}
 
 #profile-pic {
     height: 150px;
@@ -126,12 +135,20 @@ $blur-minimum: .5; //lowest percentage possible to be blurred
 
 $negative-percentage: .2; //probability of shape parallax going negative direction
 
-.geometric-background {}
+.geometric-background {
+  position: relative;
+}
 
 .random-shape::before {
   content: "/f04d";
 }
 
+/*
+ * This loop iterates through and assigns formatting to each of the $shape-count
+ * number of random shapes. This assigns random values for shape, color, and blur.
+ * JS does the actual creation of HTML tags but this creates custom formatting with the
+ * naming schema as .shape-container--i where i is the number.
+ */
 @for $i from 1 through $shape-count {
   $cur-size: $shape-size + random($shape-size-variation); //THIS shape's size is some deviation from the base
   $rotation: random(360); //random rotation
@@ -155,8 +172,8 @@ $negative-percentage: .2; //probability of shape parallax going negative directi
       color: $shape-color;
       content: $shape-type;
 
-      }
-  }
+    } //.random-shape
+  } //.shape-container--1
 
 }
 
@@ -181,8 +198,7 @@ $negative-percentage: .2; //probability of shape parallax going negative directi
 /* project section */
 #projects {}
 
-#projects .content {
-}
+#projects .content {}
 
 /********************************/
 /* general */

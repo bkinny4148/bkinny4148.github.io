@@ -1,8 +1,17 @@
+/*
+ * Make dollar sign symbol behave like jQuery.
+ */
 var $ = function(id) {
   return document.getElementById(id);
 } //$
 
-var createShapes = function() {
+/*
+ * Create and inserts random shape tags into document. Assigns parallax motion value.
+ *
+ * @param number of shapes to creates, must match with $shape-count value of CSS
+ * else they will not be formatted.
+ */
+var createShapes = function(number) {
 
   let html = '';
   let parallax = 2;
@@ -16,26 +25,26 @@ var createShapes = function() {
   var $allShapes = $("[class*='shape-container--']");
 } //createShapes
 
-var addParallaxEffect = function(event) {
+/*
+ * Function for creating parallax effect EventListener on the geometric background
+ * random shapes.
+ *
+ * @param e
+ * @param target
+ * @param movement
+ */
+function parallaxize(e, target, movement) {
+
+  var container = $('landing');
+  var relX = e.pageY - container.offset().left;
+  var relY = e.pageX - container.offset().top;
+
+} //parallaxize
 
 
-
-  let speed = 25;
-
-  document.querySelector('.random-shape').forEach((shape) => {
-    const x = (window.innerWidth - event.pageX*speed);
-    const y = (window.innerHeight - event.pageY*speed);
-
-     shape.style.transform = `translateX(${x}px) translateY(${y}px)`;
-
-  });
-  //
-  //
-  //
-  // });
-
-}
-
+/*
+ * Load functions/variables/listeners when window loads.
+ */
 window.onload = function() {
     createShapes();
 
@@ -56,12 +65,4 @@ window.onload = function() {
         });
 
     });
-};
-
-function parallaxize(e, target, movement) {
-
-  var container = $('landing');
-  var relX = e.pageY - container.offset().left;
-  var relY = e.pageX - container.offset().top;
-
-}
+}; //window.onload
