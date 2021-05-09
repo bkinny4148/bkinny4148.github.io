@@ -224,7 +224,7 @@ $wave-count: 4;
 @for $i from 1 through $wave-count {
   .wave:nth-child(#{$i}) {
     animation-delay: #{random(100)}ms;
-    animation: wave linear #{random(5) + 2}s infinite;
+    animation: wave linear #{random(5 * $i) + 10}s infinite;
   } //.wave:nth-child
 } //for
 
