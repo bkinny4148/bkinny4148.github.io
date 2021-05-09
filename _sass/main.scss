@@ -209,6 +209,7 @@ $wave-count: 4;
 .wave {
   position: absolute;
   width: 200%;
+  transform: translateY(-1rem);
 }
 
 @keyframes wave {
