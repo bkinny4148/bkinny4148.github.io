@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 1440 320"
+   version="1.1"
+   id="svg835"
+   sodipodi:docname="d-blue.svg"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">
+  <metadata
+     id="metadata841">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs839" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1440"
+     id="namedview837"
+     showgrid="false"
+     inkscape:zoom="0.76180556"
+     inkscape:cx="223.81039"
+     inkscape:cy="165.25068"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg835" />
+  <path
+     fill="#000b76"
+     fill-opacity="1"
+     d="M 0,84.113036 C 32.565494,33.812048 67.551832,115.19201 109.68733,117.7959 146.38733,117.4959 185,107 222,112 c 36.5,5 73,59 110,58.7 37.2,0.3 74,-53.7 111,-69.4 37,-16.3 74,5.7 111,21.4 36.8,16.3 74,26.3 111,53.3 36.5,27 73,69 110,64 37.3,-5 74,-59 111,-80 37.1,-21 74,-11 111,5.3 36.8,15.7 74,37.7 111,16 36.6,-21.3 74,-85.3 110,-90.6 112.3638,-11.834793 135.3902,131.38771 222,-6.586964 V 0 H 1421.5 1329 1218 1108 997 886 775 665 554 443 332 222 111 18 0 Z"
+     id="path833"
+     sodipodi:nodetypes="cccccccccccccccccccccccccccccc" />
+</svg>

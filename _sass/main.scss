@@ -21,6 +21,10 @@ html {
   scroll-behavior: smooth; //scrolls smooth down to sections on same page link
   min-height: 100vh;
   overflow-x: hidden;
+
+  //custom cursor
+  //cursor: url($baseurl + "/assets/icons/moon.svg"), auto;
+
 }
 
 body {
@@ -83,20 +87,23 @@ header {
 /********************************/
 /* landing section */
 #landing {
-  height: 100vh; //any scrolling brings to next section
+  height: 65vh; //any scrolling brings to next section
   min-height: 50rem; //to prevent title card from flowing onto next page
   background: $blue-electric;
-  overflow: hidden; //hide shapes that make it out of bounds
-  position: relative;
-
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow-x: hidden; //hide out of bounds shapes
 }
 
 #landing .content {
   position: absolute;
   align-self: center;
-  margin-top: 15vh;
+  margin-bottom: 10vh;
+}
+
+#landing .card {
+  margin-top: 10vh;
 }
 
 #profile-pic {
@@ -110,33 +117,43 @@ header {
     justify-content: space-between;
 }
 
-#div-in {
+#dive-in {
   text-align: center;
   text-decoration: none;
-
   color: white;
-  background: blue;
-  margin: auto;
   font-family: $fnt-sans;
+  margin: auto;
+  padding-top: 5rem;
 }
+
+#dive-in:hover {
+  opacity: 50%;
+
+  img {
+    animation: bounce ease-out 1s infinite;
+  }
+}
+
+@keyframes bounce {
+  50% { transform: translateY(.5rem) }
+}
+
 
 /* background shapes */
 $shape-size: 1; //base size of shapes
-$shape-size-variation: 1; //max size can deviate from base
+$shape-size-variation: 2; //max size can deviate from base
 
 $shape-colors: #45ffdc, #ffef96, #ff94a1, #cda1ff, #31b4ff, #4800c0, #9300c9; //list of shape color options
 $shapes: '\25B3', '\25C7', '\25CF', '\25EF',  '\25A0', '\25A1', '\25B7', '\25A1', '\25CB';
 $shape-count: 50; //number of total shapes
 
-$parallax-base: 2; //base speed for parallax
-$parallax-variation: 1;
-
 $blur-minimum: .5; //lowest percentage possible to be blurred
+$opacity-minimum: .8; //lowest percentage possible to be transparent
 
-$negative-percentage: .2; //probability of shape parallax going negative direction
-
-.geometric-background {
+#geometric-background {
   position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .random-shape::before {
@@ -152,15 +169,14 @@ $negative-percentage: .2; //probability of shape parallax going negative directi
 @for $i from 1 through $shape-count {
   $cur-size: $shape-size + random($shape-size-variation); //THIS shape's size is some deviation from the base
   $rotation: random(360); //random rotation
-  $blur: 1 - random() * $blur-minimum;
+  $blur: 1 - $blur-minimum * random();
+  $opacity: 1 - $opacity-minimum * random();
 
   $color-index: random(length($shape-colors)); //random color from available
   $shape-color: nth($shape-colors, $color-index);
 
   $shape-index: random(length($shapes));
   $shape-type: nth($shapes, $shape-index);
-
-  $parallax-speed: $parallax-base + random($parallax-variation);
 
   .shape-container--#{$i} {
 
@@ -171,15 +187,48 @@ $negative-percentage: .2; //probability of shape parallax going negative directi
       font-size: #{$cur-size}rem;
       color: $shape-color;
       content: $shape-type;
-
+      opacity: $opacity;
     } //.random-shape
   } //.shape-container--1
+} //for
 
+/* waves transition */
+$wave-count: 4;
+
+#wave-container {
+  width: 100%;
+  overflow: hidden;
 }
+
+.wave {
+  position: absolute;
+  width: 200%;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@for $i from 1 through $wave-count {
+  .wave:nth-child(#{$i}) {
+    //animation-delay: #{random(100)}ms;
+    //animation: wave linear #{random(5) + 2}s infinite;
+  } //.wave:nth-child
+} //for
+
+
+
+
 
 /********************************/
 /* info section */
 #info {
+  padding-top: 40rem;
   background: $off-white;
 }
 
