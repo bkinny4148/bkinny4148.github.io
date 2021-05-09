@@ -1,19 +1,15 @@
 ---
 layout: post
-title:  "Hello W0rld, Welcome to the Blog"
+title:  "Hello_W0rld (or the one where he instroduces himself)"
+tags: welcome posts projects stuff exciting
+excerpt_separator: <!--more-->
 ---
 
-# Welcome
+# Welcome to the Blog
 
-This is my first blog post!
+My name is Ben and I am excited to be posting for the first time on here. Honestly, I am not sure how I am going to be using this. The website is barely a third finished but hey, I need to add some content.
 
-Pretty exciting.
+I thought that the first thing I should do was share a little about me and why I do what I do.
 
-Here is a list of all the things I am excited for:
-- posts
-- projects
-- notifications
-- looking at your stuff
-
-
-[x] First post
+<!--more-->
+So first off, 

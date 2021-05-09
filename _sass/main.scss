@@ -1,100 +1,214 @@
-$bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-
-
-//so many lost songs pallette
-$a1: #051e3e;
-$a2: #251e3e;
-$a3: #451e3e;
-$a4: #651e3e;
-$a5: #851e3e;
-
-//satori colors pallette
-$b1: #bd8c7d;
-$b2: #d1bfa7;
-$b3: #8e8e90;
-$b4: #49494b;
-
-//snug color pallette
-$c1: #3a4660;
-$c2: #c9af98;
-$c3: #ed8a63;
-$c4: #845007;
-
-//eclipse color pallette
-$d1: #22272c;
-$d2: #2a4158;
-$d3: #597387;
-$d4: #8c9ea3;
-$d5: #958a56;
-
-$bodyColor: #ffffff;
-
-/**
-
-Style Guide:
-
-element {
-    details about color, shape, look
-
-    details about spacing, margin, padding
-
-    details about positioning, display, etc.
-}
-
-**/
+/* fonts */
+$fnt-serif: 'Crimson Text', serif;
+$fnt-sans: 'Open Sans', sans-serif;
 
 /* --------------------------------------------- */
 
+$red: #F86363;
+
+$blue-electric: #777CFD;
+$blue-light: #C9CBFF;
+$blue-dark: #040639;
+$blue: #1A1C63;
+
+$off-white: #FFF4ED;
+
+$card-color: #414242;
+$card-shadow: #00000025;
+
+
 html {
-    color: $bodyColor;
-    background-color: $d2;
-    font-family: sans-serif;
+  scroll-behavior: smooth; //scrolls smooth down to sections on same page link
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
-    background-color: $d3;
-    font-family: $bodyFont;
-    
-    margin: 0;
+  margin: 0;
 }
 
+/********************************/
+/* header */
 header {
-    background: $d1;
+    // height: 5vh;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
 }
 
-main {}
-
-footer {}
-
-
-/* header content */
-#site_name a {
-    text-decoration: none;
-    color: $bodyColor;
+#nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 #nav li {
-    list-style: none;    
-    display: inline;
-    
+  list-style: none;
 }
 
-/* profile area */
-#profile_banner {
-    background-color: $d2;
+#nav a {
+  font-size: 1.25rem;
 
-    margin: 0;
-    padding: 0;
-    
+  font-family: $fnt-sans;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+/********************************/
+/* components */
+
+.card {
     display: flex;
+    flex-direction: column;
     align-items: center;
+
+    background: $card-color;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px 4px $card-shadow;
+
+    // border-radius: 15px;
+    text-align: center;
+
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+
+    /* font and colors */
+    font-family: 'Open Sans', sans-serif;
+    color: white;
 }
 
-#profile_pic {
-    border-radius: 50%;
-    width: 15%;
+/********************************/
+/* landing section */
+#landing {
+  height: 100vh;
+  background: $blue-electric;
+  overflow: hidden;
 }
 
-#profile_descr {    
-    margin-left: 5%;
+#landing .content {}
+
+#profile-pic {
+    height: 150px;
+    width: 150px;
+    background: $red;
+    border-radius: 100%;
+}
+
+#social-bar {
+    justify-content: space-between;
+}
+
+#div-in {
+  text-align: center;
+  text-decoration: none;
+
+  color: white;
+  background: blue;
+  margin: auto;
+  font-family: $fnt-sans;
+}
+
+/* background shapes */
+$shape-size: 1; //base size of shapes
+$shape-size-variation: 1; //max size can deviate from base
+
+$shape-colors: #45ffdc, #ffef96, #ff94a1, #cda1ff, #31b4ff, #4800c0, #9300c9; //list of shape color options
+$shapes: '\25B3', '\25C7', '\25CF', '\25EF',  '\25A0', '\25A1', '\25B7', '\25A1', '\25CB';
+$shape-count: 50; //number of total shapes
+
+$parallax-base: 2; //base speed for parallax
+$parallax-variation: 1;
+
+$blur-minimum: .5; //lowest percentage possible to be blurred
+
+$negative-percentage: .2; //probability of shape parallax going negative direction
+
+.geometric-background {}
+
+.random-shape::before {
+  content: "/f04d";
+}
+
+@for $i from 1 through $shape-count {
+  $cur-size: $shape-size + random($shape-size-variation); //THIS shape's size is some deviation from the base
+  $rotation: random(360); //random rotation
+  $blur: 1 - random() * $blur-minimum;
+
+  $color-index: random(length($shape-colors)); //random color from available
+  $shape-color: nth($shape-colors, $color-index);
+
+  $shape-index: random(length($shapes));
+  $shape-type: nth($shapes, $shape-index);
+
+  $parallax-speed: $parallax-base + random($parallax-variation);
+
+  .shape-container--#{$i} {
+
+    transform: rotate(#{$rotation}deg);
+    filter: blur(#{$blur}px);
+
+    .random-shape::before {
+      font-size: #{$cur-size}rem;
+      color: $shape-color;
+      content: $shape-type;
+
+      }
+  }
+
+}
+
+/********************************/
+/* info section */
+#info {
+  background: $off-white;
+}
+
+#info .content {}
+
+/* skills bars */
+.skill-name {}
+
+.skill-bar {}
+
+.skill-bar-filled {}
+
+.skill-percentage {}
+
+/********************************/
+/* project section */
+#projects {}
+
+#projects .content {
+}
+
+/********************************/
+/* general */
+.center {
+    text-align: center;
+}
+
+.content {
+  width: 60%;
+}
+
+.vertical-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.horizontal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: .5rem;
 }
