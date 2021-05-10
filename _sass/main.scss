@@ -154,8 +154,8 @@ $shape-colors: #45ffdc, #ffef96, #ff94a1, #cda1ff, #31b4ff, #4800c0, #9300c9; //
 $shapes: '\25B3', '\25C7', '\25CF', '\25EF',  '\25A0', '\25A1', '\25B7', '\25A1', '\25CB';
 $shape-count: 50; //number of total shapes
 
-$blur-minimum: .5; //lowest percentage possible to be blurred
-$opacity-minimum: .8; //lowest percentage possible to be transparent
+$blur-minimum: .75; //lowest percentage possible to be blurred
+$opacity-minimum: 1; //lowest percentage possible to be transparent
 
 #geometric-background {
   position: relative;
@@ -202,7 +202,7 @@ $opacity-minimum: .8; //lowest percentage possible to be transparent
 $wave-count: 4;
 
 #wave-container {
-  width: 100%;
+  width: 100vh;
   overflow: hidden;
 }
 
