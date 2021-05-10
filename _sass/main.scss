@@ -215,15 +215,17 @@ $wave-count: 4;
   0% {
     transform: translateX(0);
   }
+  50% {
+    transform: translateX(-50%)
+  }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
 }
 
 @for $i from 1 through $wave-count {
   .wave:nth-child(#{$i}) {
-    animation-delay: #{random(100)}ms;
-    animation: wave linear #{random(5 * $i) + 10}s infinite;
+    animation: wave ease #{random(5 * $i) + 20}s infinite;
   } //.wave:nth-child
 } //for
 
