@@ -20,7 +20,6 @@ $card-shadow: #00000025;
 html {
   scroll-behavior: smooth; //scrolls smooth down to sections on same page link
   min-height: 100vh;
-  overflow-x: hidden;
 
   //custom cursor
   //cursor: url($baseurl + "/assets/icons/moon.svg"), auto;
@@ -29,7 +28,6 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
 }
 
 /********************************/
@@ -98,7 +96,7 @@ header {
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow-x: hidden; //hide out of bounds shapes
+  overflow: hidden; //hide out of bounds shapes
 }
 
 #landing .content {
