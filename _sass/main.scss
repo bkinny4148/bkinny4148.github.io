@@ -32,11 +32,13 @@ body {
 
 /********************************/
 /* header */
-header {
-    // height: 5vh;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
+header {}
+
+/* footer */
+footer {
+  margin: auto;
+  align-items: center;
+  margin-top: 10rem;
 }
 
 #nav ul {
@@ -75,22 +77,38 @@ header {
     border-radius: 15px;
     box-shadow: 0px 4px 8px 4px $card-shadow;
 
-    // border-radius: 15px;
     text-align: center;
 
-    padding: 1.5rem;
+    padding: 1rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    min-width: 20rem;
 
     /* font and colors */
     font-family: 'Open Sans', sans-serif;
     color: white;
+
+    h2 {
+      margin: .5rem;
+    }
+
+    ul {
+      padding: 0;
+      margin-top: 0;
+      li {
+        list-style: square;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
 }
 
 /********************************/
 /* landing section */
 #landing {
-  height: 65vh; //any scrolling brings to next section
+  height: 100vh; //any scrolling brings to next section
   min-height: 50rem; //to prevent title card from flowing onto next page
   background: $blue-electric;
   display: flex;
@@ -116,7 +134,7 @@ header {
     border-radius: 100%;
 }
 
-#social-bar {
+.social-bar {
     justify-content: space-between;
 
     .icon:hover {
@@ -202,14 +220,11 @@ $opacity-minimum: 1; //lowest percentage possible to be transparent
 $wave-count: 4;
 
 #wave-container {
-  width: 100vh;
   overflow: hidden;
+  background: $off-white;
 }
 
-.wave {
-  position: absolute;
-  width: 200%;
-}
+.wave {}
 
 @keyframes wave {
   0% {
@@ -225,37 +240,140 @@ $wave-count: 4;
 
 @for $i from 1 through $wave-count {
   .wave:nth-child(#{$i}) {
-    animation: wave ease #{random(5 * $i) + 20}s infinite;
+    //animation: wave ease #{random(5 * $i) + 20}s infinite;
   } //.wave:nth-child
 } //for
-
-
-
-
 
 /********************************/
 /* info section */
 #info {
-  padding-top: 40rem;
   background: $off-white;
 }
 
-#info .content {}
+#info .content {
+  margin: auto;
+}
+
+#info .card {
+  text-align: left;
+}
+
+#info .horizontal-container {
+  flex-wrap: wrap;
+  gap: 5%;
+}
+
+#info .right.vertical-container {
+  flex-basis: 30%;
+  flex-grow: 1;
+}
+
+/* about */
+#about-name {
+  color: $blue-electric;
+  font-size: 110%;
+  font-style: italic;
+}
+
+#gender-identity {
+  font-size: .8rem;
+  font-weight: normal;
+}
 
 /* skills bars */
-.skill-name {}
+#skills {
+  flex-basis: 40%;
+  flex-grow: 1;
+}
 
-.skill-bar {}
+.skill-progress {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1%;
+  margin-bottom: 2.5%;
+  margin-top: 2.5%;
+}
 
-.skill-bar-filled {}
+.skill-name {
+  width: 8rem;
+  margin-right: 5%;
+  text-align: center;
+}
+
+.skill-percentage {
+  width: 2rem;
+  margin-left: 5%;
+}
+
+.skill-bar {
+  background: white;
+  width: 100%;
+  min-width: 10rem;
+  height: 40%;
+  position: relative;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.skill-bar-filled {
+  background: $blue-electric;
+  width: attr(data-filled);
+  height: 100%;
+  position: absolute;
+}
 
 .skill-percentage {}
 
+#skills p {
+  font-size: .8rem;
+  margin-top: auto;
+  margin-bottom: .25rem;
+}
+
+/* courses */
+// .course {
+//   background: red; //randomize
+//   padding: .15rem;
+//   border-radius: 10px;
+// }
+
 /********************************/
+/* project background transition */
+#project-transition {
+  background: $blue-dark;
+  position: relative;
+}
+
+#project-heading {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin: 0;
+  color: yellow;
+  white-space: nowrap;
+}
+
+#project-heading:before {
+ content: attr(data-heading);
+ overflow: hidden;
+ position: absolute;
+ left: 50%;
+
+
+ transform: translate(50%, 50%);
+ width: 50%;
+ color: red;
+ }
+
 /* project section */
 #projects {}
 
-#projects .content {}
+#projects .content {
+  margin: auto;
+  text-align: center;
+}
 
 /********************************/
 /* general */
@@ -265,12 +383,13 @@ $wave-count: 4;
 
 .content {
   width: 60%;
+  min-width: 30rem;
 }
 
 .vertical-container {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    justify-content: space-between;
 }
 
 .horizontal-container {

@@ -1,5 +1,5 @@
 {% include header.html %}
-<script type="text/javascript" src="{{ '/assets/js/geometric.js' | relative_url }}"></script>
+<script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
 <span id="console"></span>
 
@@ -14,8 +14,8 @@
     <div class="content vertical-container">
       <div id="nav">
         <ul>
-          <li><a href="#about">about</a></li>
-          <li><a href="#projects">projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
         </ul>
       </div>
 
@@ -25,12 +25,7 @@
            <p>Student x Developer</p>
            <p>Computer Science & Economics</p>
 
-           <div id="social-bar" class="horizontal-container">
-             <a href="https://github.com/bkinny4148"><img class="icon" src="{{ '/assets/icons/logo-github.svg' | relative_url }}"></a>
-             <a href="#"><img class="icon" src="{{ '/assets/icons/logo-linkedin.svg' | relative_url }}"></a>
-             <a href="#"><img class="icon" src="{{ '/assets/icons/logo-twitter.svg' | relative_url }}"></a>
-             <a href="#"><img class="icon" src="{{ '/assets/icons/logo-google.svg' | relative_url }}"></a>
-           </div>
+          {% include social-bar.html %}
       </div>
 
       <a href="#about" id="dive-in">
@@ -41,25 +36,9 @@
   </section>
 
   <!-- Wave Transition -->
-  <!-- <div id="wave-container">
-
-      <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path fill="#a2d9ff" fill-opacity="1" d="M 0,288 C 50.203813,292.0192 79.848631,252.99984 99.507784,240.13865 154.87708,203.91556 179.29694,256 248.29694,240 316.59694,224 343,192 411,197.3 480,203 549,245 617,256 685.7,267 754,245 823,213.3 891.4,181 960,139 1029,144 c 68.1,5 137,59 205,90.7 68.9,32.3 137,42.3 172,48 l 34,5.3 V 0 H 1405.7 1234 1029 823 617 411 206 34 0 Z"></path>
-      </svg>
-
-      <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path fill="#5000ca" fill-opacity="1" d="M 0,288 C 50.203813,292.0192 79.848631,252.99984 99.507784,240.13865 154.87708,203.91556 179.29694,256 248.29694,240 316.59694,224 343,192 411,197.3 480,203 549,245 617,256 685.7,267 754,245 823,213.3 891.4,181 960,139 1029,144 c 68.1,5 137,59 205,90.7 68.9,32.3 137,42.3 172,48 l 34,5.3 V 0 H 1405.7 1234 1029 823 617 411 206 34 0 Z"></path>
-      </svg>
-
-      <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path fill="#000b76" fill-opacity="1" d="M 0,288 C 50.203813,292.0192 79.848631,252.99984 99.507784,240.13865 154.87708,203.91556 179.29694,256 248.29694,240 316.59694,224 343,192 411,197.3 480,203 549,245 617,256 685.7,267 754,245 823,213.3 891.4,181 960,139 1029,144 c 68.1,5 137,59 205,90.7 68.9,32.3 137,42.3 172,48 l 34,5.3 V 0 H 1405.7 1234 1029 823 617 411 206 34 0 Z"></path>
-      </svg>
-
-      <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path fill="#777cfd" fill-opacity="1" d="M 0,288 C 50.203813,292.0192 79.848631,252.99984 99.507784,240.13865 154.87708,203.91556 179.29694,256 248.29694,240 316.59694,224 343,192 411,197.3 480,203 549,245 617,256 685.7,267 754,245 823,213.3 891.4,181 960,139 1029,144 c 68.1,5 137,59 205,90.7 68.9,32.3 137,42.3 172,48 l 34,5.3 V 0 H 1405.7 1234 1029 823 617 411 206 34 0 Z"></path>
-      </svg>
-  </div> -->
-
+  <div id="wave-container">
+    {% include waves.html %}
+  </div>
 
 <!--    Informational section   -->
 <section id="info">
@@ -67,43 +46,64 @@
 
   <!--    The content of these sections could eventually be loaded from Jekyll files    -->
       <div id="about" class="card">
-          <h2>About Me</h2>
-          <h3>Hey I'm Benjamin! (he/him)</h3>
+          <h1>Hey I'm <span id="about-name">Benjamin</span> <span id="gender-identity">(he/him)</span></h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
       </div>
 
       <div class="horizontal-container">
           <div id="skills" class="card">
-              <h1>Skills</h1>
+              <h2>Skills</h2>
 
+              {% for skill in site.data.skills %}
               <div class="skill-progress">
-                  <span class="skill-image">Python</span>
-                  <span class="skill-bar"></span>
-                  <span class="skill-bar-filled"></span>
-                  <span class="skill-percentage">70%</span>
+                  <span class="skill-name">{{ skill.name }}</span>
+                  <span class="skill-bar">
+                    <span class="skill-bar-filled" data-filled="{{ skill.pct }}%"></span>
+                  </span>
+                  <span class="skill-percentage">{{ skill.pct }}%</span>
               </div>
+              {% endfor %}
+
+              <p>
+                * These %’s signify my personal (and purely subjective) confidence and experience with each tool. I am constantly adding to that resevoir and trying to build a varied but deep understanding of different languages. I am able to pick up new skills quickly, but these represent my ability to quickly and confidentally solve new problems with each.
+              </p>
 
           </div>
 
-          <div class="vertical-container">
+          <div class="right vertical-container">
               <div class="card">
                   <h2>Education</h2>
-                  <p>University of Georgia, December 2021</p>
-                  <i>B.S. Computer Science & B.A. Economics</i>
-                  <p>Cumulative GPA: 3.47/4.00, Computer Science: 3.73/4.00</p>
+                  <p><strong>University of Georgia, Athens, GA</strong></p>
+                  <ul>
+                    <li>B.S. Computer Science</li>
+                    <li>B.A. Economics</li>
+                    <li>Graduating in December 2021</li>
+                    <li>Cumulative GPA: 3.47/4.00</li>
+                    <li>Computer Science: 3.73/4.00</li>
+                  </ul>
               </div>
 
               <div class="card">
                   <h2>Relevant Courses</h2>
-                  <p>Data Structures, Computer Architecture, Cloud Computing, Web Programming, Software Engineering, Software Development, Introduction to Theory of Computation, Systems Programming</p>
+                  <p>
+                  {% for course in site.data.courses %}
+                  <span class="course" title="{{ couse.number }}">{{ course.name }}</span>{% if forloop.last == false %},{% endif %}
+                  {% endfor %}
+                  </p>
               </div>
 
               <div class="card">
                   <h2>Hackathons</h2>
-                  <p>HackGT6 (2018): <a href="#">Podcaster</a></p>
-                  <p>HackGT7 (2019)</p>
-                  <p>UGAHacks5 (2020): <a href="#">Smart Mirror</a></p>
-                  <p>UGAHacks6 (2021)</p>
+                  <ul>
+                    {% for event in site.data.hackathons %}
+                    <li>
+                      {{ event.name }} ({{ event.year }})
+                      {% if event.project != 'NA' and event.project-link != 'NA' %}
+                        : <a href="{{ event.project-link }}">{{ event.project }}</a>
+                      {% endif %}
+                    </li>
+                    {% endfor %}
+                  </ul>
               </div>
 
           </div>
@@ -112,11 +112,18 @@
   </section>
 
 <!--    Project section   -->
-  <section id="projects">
+  <!-- <section id="projects">
+
+    <div id="project-transition">
+      <h1 id="project-heading" data-heading="Projects">Projects</h1>
+    </div>
+
+
     <div class="content vertical-container">
-      <h1>Projects</h1>
+      <div id="timeline"></div>
+      Timeline
     </div>
   </section>
 
 
-{% include footer.html %}
+{% include footer.html %} -->

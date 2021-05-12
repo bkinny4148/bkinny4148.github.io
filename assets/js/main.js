@@ -1,7 +1,5 @@
 const DEBUG = false;
 
-
-
 /*
  * Make dollar sign symbol behave like jQuery.
  */
@@ -99,4 +97,12 @@ window.onload = function() {
         });
 
     });
+
+    //fill in skill bars with appropriate values from the data attribute
+    document.querySelectorAll('.skill-bar-filled').forEach((bar) => {
+      percentage = bar.getAttribute('data-filled');
+      bar.style.width = percentage;
+    });
+
+
 }; //window.onload
